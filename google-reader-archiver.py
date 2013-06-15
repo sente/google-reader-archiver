@@ -5,24 +5,6 @@ import sys
 import os
 from libgreader import GoogleReader, ClientAuthMethod, Feed
 
-
-class Feed(object):
-    feed = None
-
-    def __init__(self, feed):
-        self.feed = feed
-
-    def __str__(self):
-        return self.__repr__()
-
-    def __repr__(self):
-        obj = {}
-        obj['title'] = self.feed.title
-        obj['siteUrl'] = self.feed.siteUrl
-        obj['fetchUrl'] = self.feed.fetchUrl
-        obj['self.feedUrl'] = self.feed.feedUrl
-        return json.dumps(obj,indent=2)
-
 def meta_info(feed):
     """
     returns a formatted JSON string showing the feedUrl, etc...
